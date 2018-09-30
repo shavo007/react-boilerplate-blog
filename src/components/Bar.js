@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import Foo from "./Foo";
 
-class App extends Component {
+class Bar extends Component {
   render() {
     return (
       <div>
-		  <Foo />
+        <h2>Foo - Bar</h2>
       </div>
     );
   }
 }
 
-export default App;
+export default Bar;
