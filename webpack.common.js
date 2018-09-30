@@ -1,5 +1,7 @@
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 const path = require("path");
 
 module.exports = {
@@ -7,7 +9,7 @@ module.exports = {
     main: "./src/index.js"
   },
   output: {
-    filename: "[name].[hash].js",
+    filename: "[name].[chunkhash].js",
     path: path.resolve("./dist")
   },
   module: {
@@ -37,6 +39,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "index.html"
     }),
-    new CleanWebpackPlugin(["dist"])
+    new CleanWebpackPlugin(["dist"]),
+    new BundleAnalyzerPlugin()
   ]
 };
